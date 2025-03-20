@@ -6,12 +6,12 @@ async function main() {
   await prisma.user.create({
     data: {
       email: "RkI3S@example.com",
-      address: {
-        street: "STREET",
-        city: "CITY",
-        state: "STATE",
-        zip: "ZIP",
-      },
+      // address: {
+      //   street: "STREET",
+      //   city: "CITY",
+      //   state: "STATE",
+      //   zip: "ZIP",
+      // },
     },
   });
 }
