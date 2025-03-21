@@ -1,18 +1,20 @@
 import { PrismaClient } from "@prisma/client";
+import { faker } from "@faker-js/faker";
 
 const prisma = new PrismaClient();
 
 async function main() {
-  await prisma.user.create({
-    data: {
-      email: "RkI3S@example.com",
-      // address: {
-      //   street: "STREET",
-      //   city: "CITY",
-      //   state: "STATE",
-      //   zip: "ZIP",
-      // },
-    },
+  await prisma.user.createMany({
+    data: Array.from({ length: 25 }).map(() => ({
+      email: faker.internet.email(),
+      name: faker.internet.username(),
+      address: {
+        street: faker.location.street(),
+        city: faker.location.city(),
+        state: faker.location.state(),
+        zip: faker.location.zipCode(),
+      },
+    })),
   });
 }
 
