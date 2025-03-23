@@ -11,6 +11,7 @@ async function main() {
       body: faker.lorem.paragraph(),
     })),
   });
+
   // Generate fake data for User model
   // await prisma.user.createMany({
   //   data: Array.from({ length: 25 }).map(() => ({
