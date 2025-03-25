@@ -8,5 +8,5 @@ export const getTodoListAction = async () => {
   return await prisma.todo.findMany();
 };
 export const createTodoAction = async () => {};
-export const updateTodoAction = async () => {};
-export const deleteTodoAction = async () => {};
+// export const updateTodoAction = async () => {};
+// export const deleteTodoAction = async () => {};
