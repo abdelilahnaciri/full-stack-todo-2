@@ -11,11 +11,15 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { getTodoListAction } from "@/actions/todo.actions";
 
-export default function Home() {
+export default async function Home() {
+  // ** getTodos
+  const todos = await getTodoListAction();
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Dialog>
+      <pre>{JSON.stringify(todos)}</pre>
+      {/* <Dialog>
         <DialogTrigger asChild>
           <Button>
             <Plus size={14} className="mr-1" />
@@ -47,7 +51,7 @@ export default function Home() {
             <Button type="submit">Save changes</Button>
           </DialogFooter>
         </DialogContent>
-      </Dialog>
+      </Dialog> */}
     </main>
   );
 }
