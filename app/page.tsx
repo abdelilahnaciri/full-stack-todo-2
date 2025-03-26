@@ -17,8 +17,8 @@ export default async function Home() {
   // ** getTodos
   const todos = await getTodoListAction();
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <pre>{JSON.stringify(todos)}</pre>
+    <main className="container">
+      <pre>{JSON.stringify(todos, undefined, 2)}</pre>
       {/* <Dialog>
         <DialogTrigger asChild>
           <Button>
