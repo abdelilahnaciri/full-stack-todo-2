@@ -18,8 +18,8 @@ export default async function Home() {
   const todos = await getTodoListAction();
   return (
     <main className="container">
-      <pre>{JSON.stringify(todos, undefined, 2)}</pre>
-      {/* <Dialog>
+      {/* <pre>{JSON.stringify(todos, undefined, 2)}</pre> */}
+      <Dialog>
         <DialogTrigger asChild>
           <Button>
             <Plus size={14} className="mr-1" />
@@ -51,7 +51,7 @@ export default async function Home() {
             <Button type="submit">Save changes</Button>
           </DialogFooter>
         </DialogContent>
-      </Dialog> */}
+      </Dialog>
     </main>
   );
 }
