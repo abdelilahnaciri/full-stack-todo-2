@@ -27,6 +27,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { todoFormSchema, TodoFormValues } from "@/schema";
+import { createTodoAction } from "@/actions/todo.actions";
 
 const AddTodoForm = () => {
   const defaultValues: Partial<TodoFormValues> = {
@@ -42,7 +43,10 @@ const AddTodoForm = () => {
     mode: "onChange",
   });
 
-  const onSubmit = () => {};
+  const onSubmit = async (data: TodoFormValues) => {
+    console.log(data);
+    await createTodoAction({ title: data.title, body: data.body });
+  };
   return (
     <Dialog>
       <DialogTrigger asChild>
