@@ -93,7 +93,7 @@ const AddTodoForm = () => {
                       />
                     </FormControl>
                     <FormDescription>
-                      You can write a short descriptio about your next todo
+                      You can write a short descriptio about your next todo.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
